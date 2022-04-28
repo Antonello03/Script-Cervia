@@ -1,8 +1,9 @@
-#funzioni presenti in questo codice
+# funzioni presenti in questo codice
 
 # isPrime(n) --- Verifica se n è primo
 # MCD(a,b) --- restituisce il MCD fra a e b
 # mcm(a,b) --- restituisce il mcm fra a e b
+# fact(n) --- restituisce il fattoriale di n
 # divisori(n) --- restituisce i divisori di n in una list
 # divisoriMultipli(n,x) --- restituisce i divisori multipli di x di un numero n
 # sommaCifre(n) --- somma le cifre di un numero
@@ -10,6 +11,7 @@
 # sommaElementiListMultipli(l,x) --- restituisce la somma di tutti gli elementi di l multipli di x
 # dioFanto(x,y,ris) --- restituisce una combinazione di i e j che soddisfa (a*i + b*j == ris)
 # allDioFanto(x,y,ris) --- restituisce tutte le combinazioni di i e j (con i e j <= 1000) che soddisfano (a*i + b*j == ris)
+# comb(n,k) -- restituisce tutti i modi di scegliere n elementi da k elementi senza ripetizioni e indipendentemente dall'ordine
 
 #DEFINIZIONE FUNZIONI
 
@@ -92,3 +94,20 @@ def allDioFanto(x,y,ris):
             if (x*i + y*j == ris):
                 div.append((i,j))
     return div
+
+
+# restituisce il fattoriale di n
+def fact(n):
+    if (n == 1):
+        return n
+    else:
+        return n * fact(n-1)
+
+# restituisce tutti i modi di scegliere n elementi da k elementi senza ripetizioni e indipendentemente dall'ordine
+def comb (n,k):
+    if (k > n):
+        return 0
+    else:
+        return int(fact(n) / (fact(k) * fact(n - k)))
+
+
