@@ -1,3 +1,3 @@
 from funzioni import *
 
-print(comb(6,3))
+print(perm(3,2))
